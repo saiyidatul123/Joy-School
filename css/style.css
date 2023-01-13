@@ -1,0 +1,42 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Default margin removed */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html {
+  color-scheme: dark light;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--ff-primary);
+}
+
+/* Default responsve images*/
+img, picture, svg, video {
+  max-width: 100%;
+  display: block;
+}
+
+/* root */
+:root {
+  --ff-primary: 'DM Sans', sans-serif;
+  --fs-xl: 3rem;
+  --fs-l: 2.5rem;
+  --fs-m: 2rem;
+  --fs-s: 1.5rem;
+
+}
+
+h1 {
+  font-size: var(--fs-xl);
+}
