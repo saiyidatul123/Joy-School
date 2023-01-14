@@ -38,6 +38,11 @@ img, picture, svg, video {
   max-height: auto;
 }
 
+.savings-img {
+  max-width: 2vw;
+  max-height: auto;
+}
+
 /* root */
 :root {
   --ff-primary: 'Poppins', sans-serif;
