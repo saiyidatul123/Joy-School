@@ -13,7 +13,7 @@
 }
 
 html {
-  color-scheme: dark light;
+  /* color-scheme: dark light; */
 }
 
 body {
@@ -21,15 +21,26 @@ body {
   font-family: var(--ff-primary);
 }
 
-/* Default responsve images*/
+/* Default responsive images*/
 img, picture, svg, video {
   max-width: 100%;
   display: block;
 }
 
+.scale-img {
+  max-width: 80%;
+  max-height: auto;
+  /* margin: 150px 0 0 0;  */
+}
+
+.budget-img {
+  max-width: 10vw;
+  max-height: auto;
+}
+
 /* root */
 :root {
-  --ff-primary: 'DM Sans', sans-serif;
+  --ff-primary: 'Poppins', sans-serif;
   --fs-xl: 3rem;
   --fs-l: 2.5rem;
   --fs-m: 2rem;
@@ -37,6 +48,11 @@ img, picture, svg, video {
 
 }
 
-h1 {
-  font-size: var(--fs-xl);
+#nav-section{
+  background-color: #4463ac;
+}
+
+#banner-section{
+  background-color: #84cedc;
+  color: white;
 }
