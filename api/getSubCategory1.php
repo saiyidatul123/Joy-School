@@ -2,7 +2,8 @@
 
 include 'config.php';
 
-$sql = "SELECT * FROM sub_category";
+// GET Essentials' sub-category
+$sql = "SELECT * FROM sub_category WHERE sub_category.sub_cat_id = 1";
 $result = $connection->query($sql);
 
 $resultArray = array();
@@ -15,10 +16,10 @@ if(is_object($result)) {
     while($row = $result->fetch_assoc()) {
 
       $data = array(
-        "sc_id" => $row["sc_id"],
-        "sc_name" => $row["sc_name"],
-        "sc_image" => $row["sc_image"],
-        "sc_cat_id" => $row["sc_cat_id"]
+        "sub_id" => $row["sub_id"],
+        "sub_name" => $row["sub_name"],
+        "sub_image" => $row["sub_image"],
+        "sub_cat_id" => $row["sub_cat_id"]
       );
 
       $arrayResult[$arrayIndex] = $data;
