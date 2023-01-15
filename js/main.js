@@ -1,13 +1,17 @@
-// Load essentials
 
-// on default
-$(".non-ess-cards").hide();
+// // Progress bar
+// const progress = document.querySelector("#progress-done");
+// const input = document.querySelector(".input");
+// const maxInput = document.querySelector(".maxInput");
+// let amtValue = 0;
+// let max=0;
 
-$(".essentials").click(function () {
-  $(".ess-cards").show();
-  $(".non-ess-cards").hide();
-})
-$(".non-essentials").click(function () {
-  $(".ess-cards").hide();
-  $(".non-ess-cards").show();
-})
+// input.addEventListener("keyup", function (){
+//   amtValue = parseInt(input.value, 10);
+//   console.log("amtValue", amtValue)
+// });
+
+// maxInput.addEventListener("keyup", function (){
+//   maxInput = parseInt(maxInput.value, 10);
+//   console.log("maxInput", maxValue)
+// });

@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
     <!-- JS -->
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
 
     <!-- jQuery -->
     <script
@@ -30,7 +30,7 @@
   <header>
     <section id="nav-section" class=".d-none .d-sm-block">
       <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand text-white" style="margin-left: 100px; "href="#">Logo</a>
+            <a class="navbar-brand text-white" style="margin-left: 100px; "href="#"><img class="logo-img" src="./images/reading.png" aria-hidden="true"/></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria
             expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -66,11 +66,11 @@
         <div class="row">
           <!-- Start of category -->
           <div class="row">
-          <div class="col-2">
-            <a class="essentials">Essentials</a>
+          <div class="col-xl-3">
+            <h2 class="essentials">Essentials</h2>
           </div>
-          <div class="col-2">
-            <a class="non-essentials">Non-essentials</a>
+          <div class="col-xl-3">
+            <h2 class="non-essentials">Non-essentials</h2>
           </div>
           </div>
           <!-- End of category -->
@@ -136,34 +136,84 @@
         </div>
         <!-- End of Education cards -->
 
-        <!--  -->
-
+        <!-- Progress bar -->
+        <div class="row mt-4">
+          <h4>Budget for <a id="months"></a></h4>
+        </div>
+          <div id="progress-bar">
+            <div id="progress-done"></div>
+          </div>
+          <div class="amt-input">
+            <div class="">
+              <h4>Spend</h4>
+              <input class="input" type="number" />
+            </div>
+            <div class="">
+              <h4>Max</h4>
+              <input class="maxInput" type="number" />
+            </div>
+          </div>
 
       </div>
     </section>
-
     <script>
+      // Load essentials
 
-      // // Load essentials
+      // on default
+      $(".non-ess-cards").hide();
 
-      // // on default
-      // $(".non-ess-cards").hide();
+      $(".essentials").click(function () {
+        $(".ess-cards").show();
+        $(".non-ess-cards").hide();
+      })
+      $(".non-essentials").click(function () {
+        $(".ess-cards").hide();
+        $(".non-ess-cards").show();
+      })
 
-      // $(".essentials").click(function () {
-      //   $(".ess-cards").show();
-      //   $(".non-ess-cards").hide();
-      // })
-      // $(".non-essentials").click(function () {
-      //   $(".ess-cards").hide();
-      //   $(".non-ess-cards").show();
-      // })
+      // Progress bar
+      const progress = document.querySelector("#progress-done");
+      const input = document.querySelector(".input");
+      const maxInput = document.querySelector(".maxInput");
+      let amtValue = 0;
+      let max=0;
 
-      
+      const changeWidth = () => {
+        progress.style.width = `${(amtValue / max) * 100}%`;
+        progress.innerText = `${Math.ceil((amtValue / max) * 100)}%`;
+      }
+
+      input.addEventListener("keyup", function (){
+        amtValue = parseInt(input.value, 10);
+        changeWidth();
+        // console.log("amtValue", amtValue)
+      });
+
+      maxInput.addEventListener("keyup", function (){
+        max = parseInt(maxInput.value, 10);
+        changeWidth();
+        // console.log("max", max)
+      });
+
+      // Alert
+      // if progress.innerText =
+
+      // Get month
+      const date = new Date();
+
+        const monthNow = date.toLocaleString(
+          'default',
+          {
+            month:'long'
+          }
+        );
+      document.getElementById("months").innerHTML = monthNow;
 
     </script>
 
-    <script src="/js/main.js"></script>
-    
+    <!-- JS -->
+    <script src="./js/main.js"></script>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   </body>

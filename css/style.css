@@ -12,19 +12,60 @@
   font: inherit;
 }
 
-html {
-  /* color-scheme: dark light; */
-}
-
 body {
   min-height: 100vh;
   font-family: var(--ff-primary);
 }
 
+#progress-bar {
+  background-color: rgb(228, 228, 222);
+  border-radius: 20px;
+  height: 30px;
+  width: 30vw;
+}
+
+#progress-done {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-image: repeating-linear-gradient(
+    to left,
+    rgba(177, 214, 192, 1) 0%,
+    rgba(5, 65, 83, 1) 100%
+  ); */
+  background-image: repeating-linear-gradient(
+    to left,
+    #0546e0,
+    #1172f9,
+    #4892f9
+  );
+  box-shadow: 0 5px 5px -6px #0546e0 0%, 0 3px 7px #a6c0e6 100%;
+  /* box-shadow: 0 5px 5px -6px rgba(177, 214, 192, 1) 0%, 0 3px 7px rgba(5, 65, 83, 1) 100%; */
+  border-radius: 20px;
+  color: #fff;
+  height: 100%;
+  width: 0;
+  transition: 1s ease 0.3s;
+}
+
+/* .amt-input {
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
+} */
+
 /* Default responsive images*/
-img, picture, svg, video {
+img,
+picture,
+svg,
+video {
   max-width: 100%;
   display: block;
+}
+
+.logo-img {
+  max-width: 80px;
+  max-height: auto;
 }
 
 .scale-img {
@@ -39,25 +80,43 @@ img, picture, svg, video {
 }
 
 .savings-img {
-  max-width: 2vw;
+  max-width: 50px;
   max-height: auto;
 }
 
 /* root */
 :root {
-  --ff-primary: 'Poppins', sans-serif;
+  --ff-primary: "Poppins", sans-serif;
   --fs-xl: 3rem;
   --fs-l: 2.5rem;
   --fs-m: 2rem;
   --fs-s: 1.5rem;
-
 }
 
-#nav-section{
+#nav-section {
   background-color: #4463ac;
 }
 
-#banner-section{
+#banner-section {
   background-color: #84cedc;
   color: white;
+}
+
+.essentials:hover {
+  color: #4463ac;
+  cursor: pointer;
+}
+
+.essentials:focus {
+  color: #4463ac;
+  cursor: pointer;
+}
+.non-essentials:hover {
+  color: #4463ac;
+  cursor: pointer;
+}
+
+.non-essentials:focus {
+  color: #4463ac;
+  cursor: pointer;
 }
